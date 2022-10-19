@@ -1,0 +1,27 @@
+Main_loop:
+	mov.w #00ffh, R4;
+	mov.w #00f0h, R5;
+    mov.w #0001h, R6;
+	mov.w #0001h, R7;
+	mov.w #0001h, R9;
+
+    and R6, R4;
+    and R6, R5;
+
+    cmp R4, R5;
+    jeq LSB_equal;
+
+    xor R4, R5;
+    cmp R5, R6;
+    jeq LSB_xor;
+
+	jmp Main_loop;
+
+LSB_equal:
+	mov.w #0ff0h, R9;
+	jmp Main_loop;
+
+LSB_xor:
+	inv.w R9;
+	mov.w R9, R10;
+	jmp Main_loop;
