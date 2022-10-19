@@ -1,0 +1,33 @@
+#include <msp430.h> 
+
+
+float b = 5.0;
+
+ int sum(int n1, int n2) {
+    signed int sum = n1+n2;
+    return sum;
+}
+
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
+  Q1
+    int a = 3;
+    a+=1;
+    b-=1;
+    unsigned char c = 0x000f;
+    unsigned char d = 0x0005;
+    unsigned char e = c | d;
+    unsigned char f = c & d;
+
+
+// Q2
+    int n1 = 0b1000000000011010;
+    int n2 = 0b1000000000010011;
+    int s = sum(n1,n2);
+    int sum2 = n1 + n2;
+    while(1);
+
+    return 0;
+}
