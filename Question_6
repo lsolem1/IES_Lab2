@@ -1,0 +1,11 @@
+loop:
+		mov.w #2D97h, R4;
+		mov.w #6239h, R5;
+		call #subroutine;
+		jmp $;
+
+subroutine:
+		and R5, R4;
+		;or R4
+		mov.w R4, &203Ch;
+		ret;
