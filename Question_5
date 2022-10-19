@@ -1,0 +1,43 @@
+
+		mov.w #0010h, R4;
+		mov.w #0002h, R5;
+
+		cmp R4, R5;
+
+		jl less;
+		jge greater_equal;
+
+		jeq $;
+
+less:
+		call #less_function;
+		jmp $;
+
+greater_equal:
+			jeq equal
+			call #greater_function;
+			jmp $;
+
+less_function:
+		mov.w #000Ah, R11;
+		mov.w #0009h, R12;
+		mov.w #0008h, R13;
+		mov.w #0007h, R14;
+		mov.w #0006h, R15;
+		dec R4;
+
+		ret;
+
+equal:
+		mov.w #000Bh, R11;
+		jmp $;
+
+greater_function:
+		mov.w #0001h, R11;
+		mov.w #0002h, R12;
+		mov.w #0003h, R13;
+		mov.w #0004h, R14;
+		mov.w #0005h, R15;
+		dec R4;
+
+		ret;
